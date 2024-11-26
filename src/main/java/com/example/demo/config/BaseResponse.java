@@ -33,5 +33,21 @@ public class BaseResponse<T> {
         this.message = status.getMessage();
         this.code = status.getCode();
     }
+
+    public boolean isSuccess() {
+        return isSuccess;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public T getResult() {
+        return result;
+    }
 }
 

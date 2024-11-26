@@ -2,6 +2,7 @@ package com.example.demo.src.auth;
 
 import com.example.demo.config.BaseException;
 import com.example.demo.config.BaseResponse;
+import com.example.demo.config.BaseResponseStatus;
 import com.example.demo.src.auth.model.PostLoginReq;
 import com.example.demo.src.auth.model.PostLoginRes;
 import com.example.demo.utils.JwtService;
@@ -42,7 +43,7 @@ public class AuthController {
     // 로그인
     @ResponseBody
     @PostMapping("/logIn")
-    public BaseResponse<PostLoginRes> logIn(@RequestBody PostLoginReq postLoginReq){
+    public BaseResponse<PostLoginRes> logIn(@RequestBody PostLoginReq postLoginReq) {
         try{
 
             // TODO: 로그인 값들에 대한 형식적인 validatin 처리해주셔야합니다!
@@ -51,7 +52,7 @@ public class AuthController {
                 return new BaseResponse<>(POST_USERS_EMPTY_EMAIL);
             }
             if(postLoginReq.getPwd() == null){
-                return new BaseResponse<>(POST_USERS_EMPTY_PASSWORD);
+                return new BaseResponse<>(BaseResponseStatus.POST_USERS_EMPTY_PASSWORD);
             }
 
             if(!isRegexEmail(postLoginReq.getEmail())){

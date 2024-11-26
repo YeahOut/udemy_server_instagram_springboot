@@ -7,8 +7,8 @@ plugins {
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 17
+targetCompatibility = 17
 
 compileJava.options.encoding = 'UTF-8'
 
@@ -30,8 +30,8 @@ dependencies {
 
     // Lombok
     implementation 'org.projectlombok:lombok'
-    compileOnly 'org.projectlombok:lombok:1.18.16'
-    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+    compileOnly 'org.projectlombok:lombok:1.18.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
 
     // DB
     runtimeOnly 'mysql:mysql-connector-java' // mysql8

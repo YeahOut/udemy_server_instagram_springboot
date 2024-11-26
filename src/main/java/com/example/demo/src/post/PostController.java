@@ -2,8 +2,10 @@ package com.example.demo.src.post;
 
 import com.example.demo.config.BaseException;
 import com.example.demo.config.BaseResponse;
-import com.example.demo.src.post.model.*;
-import com.example.demo.src.user.model.PatchUserReq;
+import com.example.demo.src.post.model.GetPostsRes;
+import com.example.demo.src.post.model.PatchPostReq;
+import com.example.demo.src.post.model.PostPostReq;
+import com.example.demo.src.post.model.PostPostRes;
 import com.example.demo.utils.JwtService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,9 +14,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.example.demo.config.BaseResponseStatus.*;
-import static com.example.demo.utils.ValidationRegex.*;
-import static com.example.demo.utils.ValidationRegex.isRegexNickName;
+import static com.example.demo.config.BaseResponseStatus.POST_POSTS_EMPTY_CONTENTS;
+import static com.example.demo.config.BaseResponseStatus.POST_POSTS_EMPTY_IMGRUL;
 
 
 @RestController
