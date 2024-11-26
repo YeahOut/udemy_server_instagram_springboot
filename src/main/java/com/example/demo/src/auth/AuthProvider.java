@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 import static com.example.demo.config.BaseResponseStatus.*;
+import static org.apache.tomcat.util.net.openssl.ciphers.Encryption.AES128;
 
 //Provider : Read의 비즈니스 로직 처리
 @Service
