@@ -1,16 +1,27 @@
 server:
-  port: 9000
+  port: 8080
 
 spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
-  application:
-    name: demo
-
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true # SQL 쿼리를 읽기 쉽게 포맷
   datasource:
     platform: mysql
-    url: jdbc:mysql://localhost:3306/umc?serverTimezone=Asia/Seoul # 변경해주세요
-    username:  root
-    password:  '0000'
-    driver-class-name: com.mysql.cj.jdbc.Driver # mysql 8버전
-    # driver-class-name: com.mysql.jdbc.Driver # mysql 5버전
+    url: jdbc:mysql://localhost:3306/umc?serverTimezone=Asia/Seoul&useSSL=false&allowPublicKeyRetrieval=true
+    username: root # 본인의 MySQL 사용자명
+    password: '0000' # 본인의 MySQL 비밀번호
+    driver-class-name: com.mysql.cj.jdbc.Driver # MySQL 8 버전
+  spring:
+    security:
+      enabled: false
+      user:
+        name: user
+        password: '6abef86a-ad73-45f1-8907-1462af093e6c'
+
+
